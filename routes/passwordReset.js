@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
       }).save();
     }
 
-    const link = `As per your request for password change, click on the link below for password change. This link is only valid for 1 hour and 1 attempt. Kindly ignore this mail if you do not wish to change password.
+    const link = `As per your request for password change, copy the string given below for password change. This string is only valid for 1 hour and 1 attempt. Kindly ignore this mail if you do not wish to change password.
       String: ${user._id}/${token.token}`;
     await sendEmail(user.email, "Password reset", link);
 
