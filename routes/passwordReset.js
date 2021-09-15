@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
 
     const link = `As per your request for password change, click on the link below for password change. 
         This link is only valid for 1 hour. Kindly ignore this mail if you do not wish to change password.
-        ${process.env.BASE_URL}/password-reset/${user._id}/${token.token}`;
+        ${user._id}/${token.token}`;
     await sendEmail(user.email, "Password reset", link);
 
     res.send("password reset link sent to your email account");
